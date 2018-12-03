@@ -2,11 +2,11 @@
 $contentType = isset($_SERVER["CONTENT_TYPE"]) ? trim($_SERVER["CONTENT_TYPE"]) : '';
 
 if ($contentType === "application/json") {
-  //the data from the user
+    //the data from the user
     $content = trim(file_get_contents("php://input"));
-    $decoded = json_decode($content, true);
+    $decoded = json_decode($content, true);//decode data
 
-  //If json_decode failed, the JSON is invalid.
+    //If json_decode failed, the JSON is invalid.
     if (!is_array($decoded)) {
         echo "Please try again";
     } else {

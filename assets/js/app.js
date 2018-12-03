@@ -13,7 +13,6 @@ function generateCode() {
   };
   fetch("server.php", data)
     .then(js => {
-      console.log(js);
       return js.text();
     })
     .then(response => {
@@ -46,7 +45,6 @@ function validateCode() {
       return js.text();
     })
     .then(response => {
-      console.log(response);
       validatedCodeStatus.innerHTML = status[response];
     });
 }
